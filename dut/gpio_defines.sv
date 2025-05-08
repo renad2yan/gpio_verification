@@ -1,0 +1,49 @@
+`define GPIO_IOS 32
+`define GPIO_LINES32
+`define GPIO_IMPLEMENTED
+`define GPIO_REGISTERED_WB_OUTPUTS
+`define GPIO_REGISTERED_IO_OUTPUTS
+`define GPIO_AUX_IMPLEMENT
+`define GPIO_CLKPAD
+`define GPIO_SYNC_IN_WB
+`define GPIO_SYNC_CLK_WB
+`define GPIO_READREGS
+`define GPIO_FULL_DECODE
+`ifdef GPIO_STRICT_32BIT_ACCESS
+`else
+`define GPIO_WB_BYTES4
+`endif
+`define GPIO_ADDRHH 7
+`define GPIO_ADDRHL 5
+`define GPIO_ADDRLH 1
+`define GPIO_ADDRLL 0
+`define GPIO_OFS_BITS	`GPIO_ADDRHL-1:`GPIO_ADDRLH+1
+`define GPIO_RGPIO_IN		  4'h0	// Address 0x00
+`define GPIO_RGPIO_OUT		4'h1	// Address 0x04
+`define GPIO_RGPIO_OE		  4'h2	// Address 0x08
+`define GPIO_RGPIO_INTE		4'h3	// Address 0x0c
+`define GPIO_RGPIO_PTRIG	4'h4	// Address 0x10
+`ifdef GPIO_AUX_IMPLEMENT
+`define GPIO_RGPIO_AUX		4'h5	// Address 0x14
+`endif // GPIO_AUX_IMPLEMENT
+
+`define GPIO_RGPIO_CTRL		4'h6	// Address 0x18
+`define GPIO_RGPIO_INTS		4'h7	// Address 0x1c
+
+`ifdef GPIO_CLKPAD
+`define GPIO_RGPIO_ECLK   4'h8  // Address 0x20
+`define GPIO_RGPIO_NEC    4'h9  // Address 0x24
+`endif //  GPIO_CLKPAD
+
+`define GPIO_DEF_RGPIO_IN	`GPIO_IOS'h0
+`define GPIO_DEF_RGPIO_OUT	`GPIO_IOS'h0
+`define GPIO_DEF_RGPIO_OE	`GPIO_IOS'h0
+`define GPIO_DEF_RGPIO_INTE	`GPIO_IOS'h0
+`define GPIO_DEF_RGPIO_PTRIG	`GPIO_IOS'h0
+`define GPIO_DEF_RGPIO_AUX	`GPIO_IOS'h0
+`define GPIO_DEF_RGPIO_CTRL	`GPIO_IOS'h0
+`define GPIO_DEF_RGPIO_ECLK `GPIO_IOS'h0
+`define GPIO_DEF_RGPIO_NEC `GPIO_IOS'h0
+
+`define GPIO_RGPIO_CTRL_INTE		0
+`define GPIO_RGPIO_CTRL_INTS		1
