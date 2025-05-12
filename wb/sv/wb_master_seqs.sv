@@ -1,3 +1,4 @@
+
 class wb_base_seq extends uvm_sequence #(wb_transaction);
 
   // Required macro for sequences automation
@@ -474,3 +475,8 @@ class wb_read_spi2_seq extends wb_base_seq;
   endtask : body
 
 endclass : wb_read_spi2_seq
+
+
+
+
+

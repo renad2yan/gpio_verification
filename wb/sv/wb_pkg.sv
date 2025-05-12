@@ -1,23 +1,26 @@
 package wb_pkg;
 
-  import uvm_pkg::*;
-  `include "uvm_macros.svh"
+ import uvm_pkg::*;
+ `include "uvm_macros.svh"
 
   typedef uvm_config_db#(virtual wb_if) wb_vif_config;
 
-  // Transaction type
   `include "../sv/wb_transaction.sv"
 
-  // UVC components
-  `include "../sv/wb_sequencer.sv"
-  `include "../sv/wb_driver.sv"
-  `include "../sv/wb_monitor.sv"
-  `include "../sv/wb_agent.sv"
 
-  // Sequences
-  `include "../sv/wb_sequences.sv"
+  `include "../sv/wb_master_sequencer.sv"
+  `include "../sv/wb_master_driver.sv"
+  `include "../sv/wb_master_monitor.sv"
+  `include "../sv/wb_master_agent.sv"
+  `include "../sv/wb_master_seqs.sv"
 
-  // Environment
+  `include "../sv/wb_slave_sequencer.sv"
+  `include "../sv/wb_slave_driver.sv"
+  `include "../sv/wb_slave_monitor.sv"
+  `include "../sv/wb_slave_agent.sv"
+  `include "../sv/wb_slave_seqs.sv"
+
   `include "../sv/wb_env.sv"
-
+ 
 endpackage : wb_pkg
+
